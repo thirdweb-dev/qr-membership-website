@@ -7,17 +7,21 @@ const supportedChainIds = [137, 80001];
 /**
  * Include the connectors you want to support
  * injected - MetaMask
- * magic - Magic Link
  * walletconnect - Wallet Connect
  * walletlink - Coinbase Wallet
  */
 const connectors = {
   injected: {},
-  walletconnect: {},
+  walletconnect: {
+    chainId: 137,
+    rpc: {
+      137: "https://polygon-rpc.com",
+    },
+  },
   walletlink: {
     appName: "thirdweb - demo",
-    url: "https://thirdweb.com",
     darkMode: false,
+    url: "https://polygon-rpc.com",
   },
 };
 

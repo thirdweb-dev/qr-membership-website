@@ -7,8 +7,9 @@ import { ThirdwebSDK } from "@3rdweb/sdk";
 import { useWeb3 } from "@3rdweb/hooks";
 import { ConnectWallet } from "@3rdweb/react";
 
-const CONTRACT_ADDRESS = "0x454d0c2E70099F21c1042e8Db28bf08149BE9D4C";
-const TOKEN_ID = "0";
+const RPC_URL = process.env.NEXT_PUBLIC_RPC_URL;
+const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
+const TOKEN_ID = process.env.NEXT_PUBLIC_TOKEN_ID;
 
 export default function Member({ signature, walletAddress, balance }) {
   const router = useRouter();
@@ -90,7 +91,7 @@ export async function getServerSideProps(context) {
     return { props: { signature: null, walletAddress: null, balance: 0 } };
   }
 
-  const provider = ethers.getDefaultProvider("https://polygon-rpc.com");
+  const provider = ethers.getDefaultProvider(NEXT_PUBLIC_RPC_URL);
   const module = new ThirdwebSDK(provider).getBundleDropModule(
     CONTRACT_ADDRESS
   );

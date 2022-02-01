@@ -5,8 +5,8 @@ import { ThirdwebSDK } from "@3rdweb/sdk";
 import { useWeb3 } from "@3rdweb/hooks";
 import { ConnectWallet } from "@3rdweb/react";
 
-const CONTRACT_ADDRESS = "0x454d0c2E70099F21c1042e8Db28bf08149BE9D4C";
-const TOKEN_ID = "0";
+const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
+const TOKEN_ID = process.env.NEXT_PUBLIC_TOKEN_ID;
 const DEFENDER_URL = "";
 
 export default function Claim() {
@@ -29,6 +29,7 @@ export default function Claim() {
 
   const onClaim = useCallback(async () => {
     // claim 1 of the token
+    console.log(module);
     await module.claim(TOKEN_ID, 1);
     setClaimed(true);
   }, [module]);

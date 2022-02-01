@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { ThirdwebProvider } from "@3rdweb/react";
 
 // Put the ethereum chain ids of the chains you want to support
-const supportedChainIds = [137, 80001];
+const supportedChainIds = [80001];
 
 /**
  * Include the connectors you want to support
@@ -13,15 +13,15 @@ const supportedChainIds = [137, 80001];
 const connectors = {
   injected: {},
   walletconnect: {
-    chainId: 137,
+    chainId: 80001,
     rpc: {
-      137: "https://polygon-rpc.com",
+      80001: "https://rpc-mumbai.maticvigil.com/",
     },
   },
   walletlink: {
     appName: "thirdweb - demo",
     darkMode: false,
-    url: "https://polygon-rpc.com",
+    url: "https://rpc-mumbai.maticvigil.com/",
   },
 };
 

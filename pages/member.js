@@ -69,7 +69,7 @@ export default function Member({ signature, walletAddress, balance }) {
         <Button>
           <Link href="/">Go Back</Link>
         </Button>
-        <Text>Does not have NFT :(</Text>
+        <Text>Access denied to private member lounge - you must own the access NFT :(</Text>
         <Button onClick={() => onEnter()}>Enter Private Member Lounge</Button>
       </Container>
     );

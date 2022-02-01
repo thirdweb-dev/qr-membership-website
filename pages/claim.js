@@ -58,14 +58,14 @@ export default function Claim() {
           <Box w="240px">
             <Image src={data.metadata.image} alt={data.metadata.name} />
           </Box>
-          <Text>{data.supply.toString()} claimed</Text>
+          <Text>{data.supply.toString()} total access NFTs claimed</Text>
         </Box>
       )}
       <Box mt={4}>
         {address && !claimed && (
-          <Button onClick={() => onClaim()}>Claim</Button>
+          <Button onClick={() => onClaim()}>Claim Access NFT</Button>
         )}
-        {!address && <Text>Connect your wallet to claim free NFT</Text>}
+        {!address && <Text>Connect your wallet to claim a free access NFT</Text>}
       </Box>
     </Container>
   );
